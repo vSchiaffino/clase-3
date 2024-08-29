@@ -1,15 +1,26 @@
-import { Text, View } from "react-native";
+import { View, Text, Button } from 'react-native'
+import React, { useState } from 'react'
 
-export default function Index() {
+type Props = {}
+
+const Contador = (props: Props) => {
+  const [contador, setContador] = useState(0)
+
+  const incrementar = () => {
+    setContador((prev) => prev + 1)
+  }
+
+  const decrementar = () => {
+    setContador((prev) => prev - 1)
+  }
+
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
+    <View>
+      <Text>Contador: {contador}</Text>
+      <Button title='Incrementar' onPress={incrementar} />
+      <Button title='Decrementar' onPress={decrementar} />
     </View>
-  );
+  )
 }
+
+export default Contador
