@@ -1,24 +1,21 @@
 import { View, Text, Button } from 'react-native'
 import React, { useState } from 'react'
+import { Card } from '@/components/Card'
 
-type Props = {}
-
-const Contador = (props: Props) => {
-  const [contador, setContador] = useState(0)
-
-  const incrementar = () => {
-    setContador((prev) => prev + 1)
-  }
-
-  const decrementar = () => {
-    setContador((prev) => prev - 1)
-  }
-
+const Contador = () => {
   return (
-    <View>
-      <Text>Contador: {contador}</Text>
-      <Button title='Incrementar' onPress={incrementar} />
-      <Button title='Decrementar' onPress={decrementar} />
+    <View
+      style={{
+        paddingHorizontal: 40,
+        display: 'flex',
+        gap: 20,
+        justifyContent: 'center',
+        height: '100%',
+      }}
+    >
+      {Array.from({ length: 3 }).map((_, index) => (
+        <Card label={'Tarjeta ' + (index + 1)} />
+      ))}
     </View>
   )
 }
