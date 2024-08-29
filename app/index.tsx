@@ -14,7 +14,7 @@ const Contador = () => {
       }}
     >
       {Array.from({ length: 3 }).map((_, index) => (
-        <Card label={'Tarjeta ' + (index + 1)} />
+        <Card label={'Tarjeta ' + (index + 1)} key={index} />
       ))}
     </View>
   )
